@@ -1,0 +1,27 @@
+.weather {
+    background-color : rgb(28, 28, 97);
+    color : white;
+    margin : 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+​
+.container {
+    margin: 10px;
+    padding: 10px;
+}
+
+.newarea {
+    padding: 10px;
+    margin: 10 10 10 10;
+    background-color:rgb(28, 28, 97);
+    color: white;
+    text-align: center;
+    border-color: turquoise;
+    border-style: solid;
+}
+
+.row00, .row01, .row02 {
+    padding: 10px;
+    margin: 10px;
+    
+}

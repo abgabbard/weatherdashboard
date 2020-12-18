@@ -6,17 +6,17 @@
 }
 ​
 .container {
-    margin: 10px;
-    padding: 10px;
+    margin: 5 5 5 5;
+    padding: 5 5 5 5;
 }
 
 .newarea {
-    padding: 10px;
+    padding: 5 5 5 5;
     margin: 10 10 10 10;
-    background-color:rgb(28, 28, 97);
+    background-color:rgb(39, 39, 72);
     color: white;
     text-align: center;
-    border-color: turquoise;
+    border-color: rgb(47, 77, 74);
     border-style: solid;
 }
 
@@ -24,4 +24,9 @@
     padding: 10px;
     margin: 10px;
     
+}
+
+.card {
+    padding: 10 10 10 10;
+    margin: 10 10 10 10;
 }

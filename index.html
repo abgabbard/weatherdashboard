@@ -67,37 +67,37 @@
 
     <div class="row row00">
         <div class="col-sm">
-        Day01 Day of Week / Date<p></p> High:<p></p> Low:
+        Day01 Day of Week / Date<p></p> High: <span class="day01high"></span><p></p> Low: <span class="day01low"></span>
       </div>
       <div class="col-sm">
-        Day02 Day of Week / Date<p></p>High:<p></p>Low:
+        Day02 Day of Week / Date<p></p>High: <span class="day02high"></span><p></p>Low: <span class="day02low"></span>
       </div>
       <div class="col-sm">
-        Day of Week / Date<p></p>High:<p></p>Low:
+        Day03 Day of Week / Date<p></p>High: <span class="day03high"></span><p></p>Low: <span class="day03low"></span>
       </div>
     </div>
 
     <div class="row row01">
         <div class="col-sm">
-        Day04 Day of Week / Date<p></p>High:<p></p>Low:
+        Day04 Day of Week / Date<p></p>High: <span class="day04high"></span><p></p>Low: <span class="day04low"></span>
         </div>
         <div class="col-sm">
-        Day05 Day of Week / Date<p></p> High:<p></p>Low:
+        Day05 Day of Week / Date<p></p> High:<span class="day05high"></span><p></p>Low: <span class="day05low"></span>
         </div>
         <div class="col-sm">
-        Day06 Day of Week / Date<p></p> High:<p></p>Low:
+        Day06 Day of Week / Date<p></p> High:<span class="day06high"></span><p></p>Low: <span class="day06low"></span>
         </div>
       </div>
 
       <div class="row row02">
         <div class="col-sm">
-        Day07 Day of Week / Date<p></p> High:<p></p>Low:
+        Day07 Day of Week / Date<p></p> High:<span class="day07high"></span><p></p>Low: <span class="day07low"></span>
         </div>
         <div class="col-sm">
-        Day08 Day of Week / Date<p></p> High:<p></p>Low:
+        Day08 Day of Week / Date<p></p> High:<span class="day08high"></span><p></p>Low: <span class="day08low"></span>
         </div>
         <div class="col-sm">
-        Day09 Day of Week / Date<p></p> High:<p></p>Low:
+        Day09 Day of Week / Date<p></p> High:<span class="day09high"></span><p></p>Low: <span class="day09low"></span>
         </div>
     </div>
   </div>
@@ -125,7 +125,25 @@
       method: "GET"
     }).then(function (response) {
       console.log("This is URL 2: ", queryUrl2);
-      console.log("This is response: ", response)
+      console.log("This is response: ", response);
+      $(".day01high").text(response.list[0].temp.max)
+      $(".day02high").text(response.list[1].temp.max)
+      $(".day03high").text(response.list[2].temp.max)
+      $(".day04high").text(response.list[3].temp.max)
+      $(".day05high").text(response.list[4].temp.max)
+      $(".day06high").text(response.list[5].temp.max)
+      $(".day07high").text(response.list[6].temp.max)
+      $(".day08high").text(response.list[7].temp.max)
+      $(".day09high").text(response.list[8].temp.max)
+      $(".day01low").text(response.list[0].temp.min)
+      $(".day02low").text(response.list[1].temp.min)
+      $(".day03low").text(response.list[2].temp.min)
+      $(".day04low").text(response.list[3].temp.min)
+      $(".day05low").text(response.list[4].temp.min)
+      $(".day06low").text(response.list[5].temp.min)
+      $(".day07low").text(response.list[6].temp.min)
+      $(".day08low").text(response.list[7].temp.min)
+      $(".day09low").text(response.list[8].temp.min)
     });
     $.ajax({
       url: queryURL,
@@ -139,7 +157,7 @@
       console.log(response);
 
       // Transfer content to HTML
-      $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+      $(".city").html("<h1>" + response.name + " Weather Details - TODAY </h1>");
       $(".wind").text("Wind Speed: " + response.wind.speed);
       $(".humidity").text("Humidity: " + response.main.humidity);
 

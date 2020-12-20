@@ -1,10 +1,10 @@
 .weather {
-    background-color : rgb(28, 28, 97);
+    background-color :rgb(64, 153, 255);
     color : white;
     margin : 10px;
     font-family: 'Times New Roman', Times, serif;
 }
-​
+
 .container {
     margin: 5 5 5 5;
     padding: 5 5 5 5;
@@ -13,11 +13,11 @@
 .newarea {
     padding: 5 5 5 5;
     margin: 10 10 10 10;
-    background-color:rgb(39, 39, 72);
     color: white;
     text-align: center;
-    border-color: rgb(47, 77, 74);
+    border-color: rgb(15, 15, 40);
     border-style: solid;
+    font-size: 25px;
 }
 
 .row00, .row01, .row02 {
@@ -26,7 +26,15 @@
     
 }
 
-.card {
+.card, .card2 {
     padding: 10 10 10 10;
     margin: 10 10 10 10;
+    background-color: rgb(64, 153, 255);
+    color: white;
+}
+
+.newwrap {
+    padding: 2px;
+    background-color: rgb(39, 91, 160);
+    color: rgb(255, 255, 255);
 }

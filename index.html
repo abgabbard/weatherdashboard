@@ -13,25 +13,27 @@
 </head>
 ​
 <html>
+
 <body>
 ​
     <div class="jumbotron jumbotron-fluid weather">
         <div class="container">
-          <h1 class="display-4 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-cloud" viewBox="0 0 16 16">
+          <h1 class="display-4 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-cloud" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
-          </svg><p></p> My Weather App </h1>
+            </svg><p></p> My Weather App </h1>
           <p class="lead"></p>
         </div>
     </div>
 ​
     <div class="container card">
-  <h5 class="card-header">Search</h5>
+  <h4 class="card-header">Check Weather</h4>
 
   <form class="container card-body">
 
         <div class="form-group">
           <label for="cityEntered">Enter City Name:</label>
-          <input type="" class="form-control cityEntered" id="searchTerm" placeholder="enter a city name">
+          <input type="" class="form-control cityEntered" id="searchTerm" placeholder="Austin">
         </div>   
           
         <button type="button" class="btn btn-light" id = "searchButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -48,8 +50,8 @@
 </form>
 </div>
 ​
-<div class="container card">
-  <h5 class="card-header">Weather Result Box</h5>
+<div class="container card card2">
+  <h3 class="card-header">Today</h3>
   <div class="card-body">
       <div id="articleResults">
         <div class="city"></div>       
@@ -60,48 +62,66 @@
       </div>
   </div>
 </div>
+
+<p></p> <!-- adding this here becuase I am having trouble spacing out the two boxes.  -->
+
 <div class="container card">
-  <h5 class="card-header">Next 10 Days</h5>
+  <h5 class="card-header">Next 10 (really its 9 ... and today) Days</h5>
   <div class="card-body">
     <div class="container newarea">
 
     <div class="row row00">
-        <div class="col-sm">
-        Day01 Day of Week / Date<p></p> High: <span class="day01high"></span><p></p> Low: <span class="day01low"></span>
+        <div class="col-sm newwrap">
+        Today<p></p> High: <span class="day01high"></span><p></p> Low: <span class="day01low"></span>
       </div>
-      <div class="col-sm">
-        Day02 Day of Week / Date<p></p>High: <span class="day02high"></span><p></p>Low: <span class="day02low"></span>
+      <div class="col-sm newwrap">
+        Today+1<p></p>High: <span class="day02high"></span><p></p>Low: <span class="day02low"></span>
       </div>
-      <div class="col-sm">
-        Day03 Day of Week / Date<p></p>High: <span class="day03high"></span><p></p>Low: <span class="day03low"></span>
+      <div class="col-sm newwrap">
+        Today+2<p></p>High: <span class="day03high"></span><p></p>Low: <span class="day03low"></span>
       </div>
     </div>
 
     <div class="row row01">
-        <div class="col-sm">
-        Day04 Day of Week / Date<p></p>High: <span class="day04high"></span><p></p>Low: <span class="day04low"></span>
+        <div class="col-sm newwrap">
+        Today+3<p></p>High: <span class="day04high"></span><p></p>Low: <span class="day04low"></span>
         </div>
-        <div class="col-sm">
-        Day05 Day of Week / Date<p></p> High:<span class="day05high"></span><p></p>Low: <span class="day05low"></span>
+        <div class="col-sm newwrap">
+        Today+4<p></p> High:<span class="day05high"></span><p></p>Low: <span class="day05low"></span>
         </div>
-        <div class="col-sm">
-        Day06 Day of Week / Date<p></p> High:<span class="day06high"></span><p></p>Low: <span class="day06low"></span>
+        <div class="col-sm newwrap">
+        Today+5<p></p> High:<span class="day06high"></span><p></p>Low: <span class="day06low"></span>
         </div>
       </div>
 
       <div class="row row02">
-        <div class="col-sm">
-        Day07 Day of Week / Date<p></p> High:<span class="day07high"></span><p></p>Low: <span class="day07low"></span>
+        <div class="col-sm newwrap">
+        Today+6<p></p> High:<span class="day07high"></span><p></p>Low: <span class="day07low"></span>
         </div>
-        <div class="col-sm">
-        Day08 Day of Week / Date<p></p> High:<span class="day08high"></span><p></p>Low: <span class="day08low"></span>
+        <div class="col-sm newwrap">
+        Today+7<p></p> High:<span class="day08high"></span><p></p>Low: <span class="day08low"></span>
         </div>
-        <div class="col-sm">
-        Day09 Day of Week / Date<p></p> High:<span class="day09high"></span><p></p>Low: <span class="day09low"></span>
+        <div class="col-sm newwrap">
+        Today+8<p></p> High:<span class="day09high"></span><p></p>Low: <span class="day09low"></span>
         </div>
     </div>
   </div>
 </div>
+
+<div class="container card">
+  <h5 class="card-header">New Test Area</h5>
+  <div class="card-body">
+    <div class="container">
+      <div class="col">
+        <div class="row">
+          <textarea></textarea>
+          <button class="btn btn-light">Click Me</button>
+          <div id="userChoice"></div>
+        </div>
+      </div>
+
+
+    </div> 
 
   <!-- Add extra div for the bonus Fahrenheit temp -->
 
@@ -121,11 +141,17 @@
     // Here we run our AJAX call to the OpenWeatherMap API
     
     $.ajax({
+
       url: queryUrl2,
       method: "GET"
+
     }).then(function (response) {
+
       console.log("This is URL 2: ", queryUrl2);
       console.log("This is response: ", response);
+
+      // Take the span "day01-09high" and put the text from the API on the page for the High temperatures
+
       $(".day01high").text(response.list[0].temp.max)
       $(".day02high").text(response.list[1].temp.max)
       $(".day03high").text(response.list[2].temp.max)
@@ -135,6 +161,9 @@
       $(".day07high").text(response.list[6].temp.max)
       $(".day08high").text(response.list[7].temp.max)
       $(".day09high").text(response.list[8].temp.max)
+
+      // Take the span "day01-09low" and put the text from the API on the page for the low temperatures
+
       $(".day01low").text(response.list[0].temp.min)
       $(".day02low").text(response.list[1].temp.min)
       $(".day03low").text(response.list[2].temp.min)
@@ -145,22 +174,21 @@
       $(".day08low").text(response.list[7].temp.min)
       $(".day09low").text(response.list[8].temp.min)
     });
+
     $.ajax({
+
       url: queryURL,
       method: "GET"
+
     }).then(function (response) {
 
-      // Log the queryURL
       console.log(queryURL);
-
-      // Log the resulting object
       console.log(response);
 
       // Transfer content to HTML
-      $(".city").html("<h1>" + response.name + " Weather Details - TODAY </h1>");
+      $(".city").html("<h3>" + response.name + " Weather Details</h3 >");
       $(".wind").text("Wind Speed: " + response.wind.speed);
       $(".humidity").text("Humidity: " + response.main.humidity);
-
 
       // Convert the temp to fahrenheit
       var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -175,7 +203,19 @@
       console.log("Temperature (F): " + tempF);
     });
 
+      $("button").on("click", function () {
+        var userText = $(".cityEntered").val();
+        var queryUrl =
+          "https://api.openweathermap.org/data/2.5/weather?q=" + userText + "&cnt=10&appid=166a433c57516f51dfab1f7edaed8413";
+        $.ajax({
+          url: queryUrl,
+          method: "GET",
+        }).then(function (response) {
+        console.log(response);
+        });
+      });
 
   </script>
+
 </body>
 </html>

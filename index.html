@@ -54,26 +54,30 @@
 <div class="container card today">
 <div class="today"></div>
 </div>
-
+</div>
+<p></p>
 <div class="container card nextfive">
-<div class="today1"></div>
-<div class="today2"></div>
-<div class="today3"></div>
-<div class="today4"></div>
-<div class="today5"></div>
+<div class="row">
+  <div class="col today1"></div>
+  <div class="col today2"></div>
+  <div class="col today3"></div>
+  <div class="col today4"></div>
+  <div class="col today5"></div>
 </div>
 </div>
 
 <p></p>
 
+<p></p>
+
 <div class="container card previouscities">
     <h3>Search Previous Cities:</h3>
-<div id="firststoredcity"><span style="font-size: 30px;">City 1:</span><span id="firststoredcity"
+<div id="firststoredcity"><span style="font-size: 20px;">City 1:</span><span id="firststoredcity"
     ></span></div>
-<div id="secondstoredcity"><span style="font-size: 30px;">City 2:</span> Phoenix</div>
-<div id="thirdstoredcity"><span style="font-size: 30px;">City 3:</span> El Paso</div>
-<div id="fourthstoredcity"><span style="font-size: 30px;">City 4:</span> Halifax</div>
-<div id="fifthstoredcity"><span style="font-size: 30px;">City 5:</span> Flagstaff</div>
+<div id="secondstoredcity"><span style="font-size: 20px;">City 2:</span> Phoenix</div>
+<div id="thirdstoredcity"><span style="font-size: 20px;">City 3:</span> El Paso</div>
+<div id="fourthstoredcity"><span style="font-size: 20px;">City 4:</span> Halifax</div>
+<div id="fifthstoredcity"><span style="font-size: 20px;">City 5:</span> Flagstaff</div>
 </div>
 
 <script>
@@ -89,7 +93,8 @@ $("#searchButton").on("click", function () {
       method: "GET",
     }).then(function (response) {
     console.log(response);
-let tempF = (response.list[0].temp.max - 273.15)*(9/5) + 32;
+    console.log(new Date((response.list[0].dt)*1000));
+let tempF = (response.list[0].temp.max - 273.20)*(9/5) + 32;
 let tempF1 = (response.list[1].temp.max - 273.15)*(9/5) + 32;
 let tempF2 = (response.list[2].temp.max - 273.15)*(9/5) + 32;
 let tempF3 = (response.list[3].temp.max - 273.15)*(9/5) + 32;
@@ -102,12 +107,12 @@ localStorage.setItem("First City", firstCity)
 
 console.log(tempF)
     $(".city").html("<h3>" + response.city.name + " Weather Details</h3 >")
-    $(".today").html("<h2>" + tempF.toFixed(0) + " Today</h2 >")
-    $(".today1").html("<h2>" + tempF1.toFixed(0) + " Tomorrow</h2 >")
-    $(".today2").html("<h2>" + tempF2.toFixed(0) + " Today+2</h2 >")
-    $(".today3").html("<h2>" + tempF3.toFixed(0) + " Today+3</h2 >")
-    $(".today4").html("<h2>" + tempF4.toFixed(0) + " Today+4</h2 >")
-    $(".today5").html("<h2>" + tempF5.toFixed(0) + " Today+5</h2 >")
+    $(".today").html("<h2> Today's High: " + tempF.toFixed(0) + " </h2 >")
+    $(".today1").html("<h2>" + tempF1.toFixed(0) + " <p></p>Tomorrow</h2 >")
+    $(".today2").html("<h2>" + tempF2.toFixed(0) + " <p></p>Today+2</h2 >")
+    $(".today3").html("<h2>" + tempF3.toFixed(0) + " <p></p>Today+3</h2 >")
+    $(".today4").html("<h2>" + tempF4.toFixed(0) + " <p></p>Today+4</h2 >")
+    $(".today5").html("<h2>" + tempF5.toFixed(0) + " <p></p>Today+5</h2 >")
         // firststoredcitySpan.textContent = localStorage.getItem("First City")
     }); // Endinf of function occuring after Ajax call (then)
   }); // Ending of search on click function.

@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>MyWeatherApp</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>New Weather App</title>
 </head>
-​
-<html>
 
 <body>
-​
     <div class="jumbotron jumbotron-fluid weather">
         <div class="container">
           <h1 class="display-4 text-center">
@@ -42,180 +37,98 @@
             </svg> Search
           </button>
           
-          <button type="button" class="btn btn-light" id = "clearResults"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+          <button type="button" class="btn btn-light" id = "clearButton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
             <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
             </svg> Clear Results
           </button>
 </form>
-</div>
-​
-<div class="container card card2">
-  <h3 class="card-header">Today</h3>
-  <div class="card-body">
-      <div id="articleResults">
-        <div class="city"></div>       
-        <div class="wind"></div>
-        <div class="humidity"></div>
-        <div class="temp"></div>
-        <div class="tempF"></div>
-      </div>
-  </div>
-</div>
-
-<p></p> <!-- adding this here becuase I am having trouble spacing out the two boxes.  -->
-
-<div class="container card">
-  <h5 class="card-header">Next 10 (really its 9 ... and today) Days</h5>
-  <div class="card-body">
-    <div class="container newarea">
-
-    <div class="row row00">
-        <div class="col-sm newwrap">
-        Today<p></p> High: <span class="day01high"></span><p></p> Low: <span class="day01low"></span>
-      </div>
-      <div class="col-sm newwrap">
-        Today+1<p></p>High: <span class="day02high"></span><p></p>Low: <span class="day02low"></span>
-      </div>
-      <div class="col-sm newwrap">
-        Today+2<p></p>High: <span class="day03high"></span><p></p>Low: <span class="day03low"></span>
-      </div>
     </div>
 
-    <div class="row row01">
-        <div class="col-sm newwrap">
-        Today+3<p></p>High: <span class="day04high"></span><p></p>Low: <span class="day04low"></span>
-        </div>
-        <div class="col-sm newwrap">
-        Today+4<p></p> High:<span class="day05high"></span><p></p>Low: <span class="day05low"></span>
-        </div>
-        <div class="col-sm newwrap">
-        Today+5<p></p> High:<span class="day06high"></span><p></p>Low: <span class="day06low"></span>
-        </div>
-      </div>
 
-      <div class="row row02">
-        <div class="col-sm newwrap">
-        Today+6<p></p> High:<span class="day07high"></span><p></p>Low: <span class="day07low"></span>
-        </div>
-        <div class="col-sm newwrap">
-        Today+7<p></p> High:<span class="day08high"></span><p></p>Low: <span class="day08low"></span>
-        </div>
-        <div class="col-sm newwrap">
-        Today+8<p></p> High:<span class="day09high"></span><p></p>Low: <span class="day09low"></span>
-        </div>
-    </div>
-  </div>
+<div class="city"></div>
+
+<p></p>
+
+<div class="results hidden">
+<div class="container card today">
+<div class="today"></div>
 </div>
 
-<div class="container card">
-  <h5 class="card-header">New Test Area</h5>
-  <div class="card-body">
-    <div class="container">
-      <div class="col">
-        <div class="row">
-          <textarea></textarea>
-          <button class="btn btn-light">Click Me</button>
-          <div id="userChoice"></div>
-        </div>
-      </div>
+<div class="container card nextfive">
+<div class="today1"></div>
+<div class="today2"></div>
+<div class="today3"></div>
+<div class="today4"></div>
+<div class="today5"></div>
+</div>
+</div>
+
+<p></p>
+
+<div class="container card previouscities">
+    <h3>Search Previous Cities:</h3>
+<div id="firststoredcity"><span style="font-size: 30px;">City 1:</span><span id="firststoredcity"
+    ></span></div>
+<div id="secondstoredcity"><span style="font-size: 30px;">City 2:</span> Phoenix</div>
+<div id="thirdstoredcity"><span style="font-size: 30px;">City 3:</span> El Paso</div>
+<div id="fourthstoredcity"><span style="font-size: 30px;">City 4:</span> Halifax</div>
+<div id="fifthstoredcity"><span style="font-size: 30px;">City 5:</span> Flagstaff</div>
+</div>
+
+<script>
+
+$(document).ready(function () {
+  
+$("#searchButton").on("click", function () {
+    var userText = $(".cityEntered").val();
+    var queryUrl =
+      "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + userText + "&cnt=10&appid=166a433c57516f51dfab1f7edaed8413";
+    $.ajax({
+      url: queryUrl,
+      method: "GET",
+    }).then(function (response) {
+    console.log(response);
+let tempF = (response.list[0].temp.max - 273.15)*(9/5) + 32;
+let tempF1 = (response.list[1].temp.max - 273.15)*(9/5) + 32;
+let tempF2 = (response.list[2].temp.max - 273.15)*(9/5) + 32;
+let tempF3 = (response.list[3].temp.max - 273.15)*(9/5) + 32;
+let tempF4 = (response.list[4].temp.max - 273.15)*(9/5) + 32;
+let tempF5 = (response.list[5].temp.max - 273.15)*(9/5) + 32;
+let firstCity = userText
+console.log("This is the first city: ", firstCity)
+localStorage.setItem("First City", firstCity)
 
 
-    </div> 
+console.log(tempF)
+    $(".city").html("<h3>" + response.city.name + " Weather Details</h3 >")
+    $(".today").html("<h2>" + tempF.toFixed(0) + " Today</h2 >")
+    $(".today1").html("<h2>" + tempF1.toFixed(0) + " Tomorrow</h2 >")
+    $(".today2").html("<h2>" + tempF2.toFixed(0) + " Today+2</h2 >")
+    $(".today3").html("<h2>" + tempF3.toFixed(0) + " Today+3</h2 >")
+    $(".today4").html("<h2>" + tempF4.toFixed(0) + " Today+4</h2 >")
+    $(".today5").html("<h2>" + tempF5.toFixed(0) + " Today+5</h2 >")
+        // firststoredcitySpan.textContent = localStorage.getItem("First City")
+    }); // Endinf of function occuring after Ajax call (then)
+  }); // Ending of search on click function.
 
-  <!-- Add extra div for the bonus Fahrenheit temp -->
+$("#clearButton").on("click", function() {
+$(".results").empty()
+$(".city").empty()
+}); // Ending of clear button
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
+}) // Ending of "ready function"
 
-// This is our API key
-    var APIKey = "166a433c57516f51dfab1f7edaed8413";
-
-    // Here we are building the URL we need to query the database
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
-      "q=Austin,Texasi&appid=" + APIKey;
-    // var userEnteredCity = $("cityName").val();
-    // console.log(userEnteredCity)
-    var queryUrl2 = "https://api.openweathermap.org/data/2.5/forecast/daily?q=Austin&cnt=10&appid=166a433c57516f51dfab1f7edaed8413"
-
-    // Here we run our AJAX call to the OpenWeatherMap API
+// function renderLastRegistered() {
     
-    $.ajax({
+//     var cityOne = $(".firststoredcity")
+//     // var cityTwo
+//     // var cityThree
+//     // var cityFour
+//     // var cityFive
 
-      url: queryUrl2,
-      method: "GET"
+// }
 
-    }).then(function (response) {
-
-      console.log("This is URL 2: ", queryUrl2);
-      console.log("This is response: ", response);
-
-      // Take the span "day01-09high" and put the text from the API on the page for the High temperatures
-
-      $(".day01high").text(response.list[0].temp.max)
-      $(".day02high").text(response.list[1].temp.max)
-      $(".day03high").text(response.list[2].temp.max)
-      $(".day04high").text(response.list[3].temp.max)
-      $(".day05high").text(response.list[4].temp.max)
-      $(".day06high").text(response.list[5].temp.max)
-      $(".day07high").text(response.list[6].temp.max)
-      $(".day08high").text(response.list[7].temp.max)
-      $(".day09high").text(response.list[8].temp.max)
-
-      // Take the span "day01-09low" and put the text from the API on the page for the low temperatures
-
-      $(".day01low").text(response.list[0].temp.min)
-      $(".day02low").text(response.list[1].temp.min)
-      $(".day03low").text(response.list[2].temp.min)
-      $(".day04low").text(response.list[3].temp.min)
-      $(".day05low").text(response.list[4].temp.min)
-      $(".day06low").text(response.list[5].temp.min)
-      $(".day07low").text(response.list[6].temp.min)
-      $(".day08low").text(response.list[7].temp.min)
-      $(".day09low").text(response.list[8].temp.min)
-    });
-
-    $.ajax({
-
-      url: queryURL,
-      method: "GET"
-
-    }).then(function (response) {
-
-      console.log(queryURL);
-      console.log(response);
-
-      // Transfer content to HTML
-      $(".city").html("<h3>" + response.name + " Weather Details</h3 >");
-      $(".wind").text("Wind Speed: " + response.wind.speed);
-      $(".humidity").text("Humidity: " + response.main.humidity);
-
-      // Convert the temp to fahrenheit
-      var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-
-      // add temp content to html
-      $(".temp").text("Temperature (K) " + response.main.temp);
-      $(".tempF").text("Temperature (F) " + tempF.toFixed(2));
-
-      // Log the data in the console as well
-      console.log("Wind Speed: " + response.wind.speed);
-      console.log("Humidity: " + response.main.humidity);
-      console.log("Temperature (F): " + tempF);
-    });
-
-      $("button").on("click", function () {
-        var userText = $(".cityEntered").val();
-        var queryUrl =
-          "https://api.openweathermap.org/data/2.5/weather?q=" + userText + "&cnt=10&appid=166a433c57516f51dfab1f7edaed8413";
-        $.ajax({
-          url: queryUrl,
-          method: "GET",
-        }).then(function (response) {
-        console.log(response);
-        });
-      });
-
-  </script>
-
+</script>
 </body>
 </html>

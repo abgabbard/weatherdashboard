@@ -117,12 +117,20 @@ localStorage.setItem("First City", firstCity)
 
 
 console.log(tempF)
+
     $(".city").html("<h3>" + response.city.name + " Weather Details</h3 >")
-    $(".today").html("<h2> Today's High: " + tempF.toFixed(0) + "<p><p>" + " " + today + " </h2 >")
+    
+    $(".today").html("<h2> Today's High: " + tempF.toFixed(0) + "<p><p>" + " " + today + " </h2 >" + "")
+    $(".today").append($('<img>', {id: 'theImg', src:'http://openweathermap.org/img/wn/10d@2x.png'}))
+    
     $(".today1").html("<h2>" + "<p></p>" + tomorrow + "<p>High:</p> " + tempF1.toFixed(0) + " <p></p></h2 >")
+
     $(".today2").html("<h2>" + "<p></p>" + today2 + "<p>High:</p> " + tempF2.toFixed(0) + "<p></p>" + " <p></p></h2 >")
+    
     $(".today3").html("<h2>" + "<p></p>" + today3 + "<p>High:</p> " + tempF3.toFixed(0) + "<p></p></h2 >")
+    
     $(".today4").html("<h2>" + "<p></p>" + today4 + "<p>High:</p> " + tempF4.toFixed(0) + " <p></p></h2 >")
+    
     $(".today5").html("<h2>" + "<p></p>" + today5 + "<p>High:</p> " + tempF5.toFixed(0) + " <p></p></h2 >")
         // firststoredcitySpan.textContent = localStorage.getItem("First City")
     }); // Endinf of function occuring after Ajax call (then)
@@ -146,6 +154,5 @@ $(".city").empty()
 // }
 
 </script>
-<img src ="http://openweathermap.org/img/w/10d.png" alt="weatherimage"
 </body>
 </html>

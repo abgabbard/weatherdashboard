@@ -1,5 +1,5 @@
 .weather {
-    background-color :rgb(64, 153, 255);
+    background-color :rgb(33, 63, 97);
     color : white;
     margin : 10px;
     font-family: 'Times New Roman', Times, serif;
@@ -29,14 +29,14 @@
 .card, .card2 {
     padding: 10 10 10 10;
     margin: 10 10 10 10;
-    background-color: rgb(64, 153, 255);
+    background-color: rgb(33, 63, 97);
     color: white;
 }
 
 .newwrap {
     padding: 2px;
     background-color: rgb(39, 91, 160);
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0);
 }
 
 .nextfive {

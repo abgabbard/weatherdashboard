@@ -71,7 +71,7 @@
 <p></p>
 
 <div class="container card previouscities">
-    <h3>Search Previous Cities:</h3>
+    <h3>The Previous Cities:</h3>
 <div id="firststoredcity"><span style="font-size: 20px;">City 1:</span><span id="firststoredcity"
     ></span></div>
 <div id="secondstoredcity"><span style="font-size: 20px;">City 2:</span> Phoenix</div>
@@ -93,7 +93,6 @@ $("#searchButton").on("click", function () {
       method: "GET",
     }).then(function (response) {
     console.log(response);
-    console.log(new Date((response.list[0].dt)*1000));
 let tempF = (response.list[0].temp.max - 273.20)*(9/5) + 32;
 let tempF1 = (response.list[1].temp.max - 273.15)*(9/5) + 32;
 let tempF2 = (response.list[2].temp.max - 273.15)*(9/5) + 32;
@@ -101,18 +100,30 @@ let tempF3 = (response.list[3].temp.max - 273.15)*(9/5) + 32;
 let tempF4 = (response.list[4].temp.max - 273.15)*(9/5) + 32;
 let tempF5 = (response.list[5].temp.max - 273.15)*(9/5) + 32;
 let firstCity = userText
+let today = (new Date((response.list[0].dt)*1000))
+let tomorrow = (new Date((response.list[1].dt)*1000))
+let today2 = (new Date((response.list[2].dt)*1000))
+let today3 = (new Date((response.list[3].dt)*1000))
+let today4 = (new Date((response.list[4].dt)*1000))
+let today5 = (new Date((response.list[5].dt)*1000))
+console.log(today)
+console.log(tomorrow)
+console.log(today2)
+console.log(today3)
+console.log(today4)
+console.log(today5)
 console.log("This is the first city: ", firstCity)
 localStorage.setItem("First City", firstCity)
 
 
 console.log(tempF)
     $(".city").html("<h3>" + response.city.name + " Weather Details</h3 >")
-    $(".today").html("<h2> Today's High: " + tempF.toFixed(0) + " </h2 >")
-    $(".today1").html("<h2>" + tempF1.toFixed(0) + " <p></p>Tomorrow</h2 >")
-    $(".today2").html("<h2>" + tempF2.toFixed(0) + " <p></p>Today+2</h2 >")
-    $(".today3").html("<h2>" + tempF3.toFixed(0) + " <p></p>Today+3</h2 >")
-    $(".today4").html("<h2>" + tempF4.toFixed(0) + " <p></p>Today+4</h2 >")
-    $(".today5").html("<h2>" + tempF5.toFixed(0) + " <p></p>Today+5</h2 >")
+    $(".today").html("<h2> Today's High: " + tempF.toFixed(0) + "<p><p>" + " " + today + " </h2 >")
+    $(".today1").html("<h2>" + "<p></p>" + tomorrow + "<p>High:</p> " + tempF1.toFixed(0) + " <p></p></h2 >")
+    $(".today2").html("<h2>" + "<p></p>" + today2 + "<p>High:</p> " + tempF2.toFixed(0) + "<p></p>" + " <p></p></h2 >")
+    $(".today3").html("<h2>" + "<p></p>" + today3 + "<p>High:</p> " + tempF3.toFixed(0) + "<p></p></h2 >")
+    $(".today4").html("<h2>" + "<p></p>" + today4 + "<p>High:</p> " + tempF4.toFixed(0) + " <p></p></h2 >")
+    $(".today5").html("<h2>" + "<p></p>" + today5 + "<p>High:</p> " + tempF5.toFixed(0) + " <p></p></h2 >")
         // firststoredcitySpan.textContent = localStorage.getItem("First City")
     }); // Endinf of function occuring after Ajax call (then)
   }); // Ending of search on click function.
@@ -135,5 +146,6 @@ $(".city").empty()
 // }
 
 </script>
+<img src ="http://openweathermap.org/img/w/10d.png" alt="weatherimage"
 </body>
 </html>
